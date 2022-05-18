@@ -1,0 +1,16 @@
+C:\Users\moise\Documents\C#\Cecyte\bin\Debug\Cecyte.exe.config
+C:\Users\moise\Documents\C#\Cecyte\bin\Debug\Cecyte.exe
+C:\Users\moise\Documents\C#\Cecyte\bin\Debug\Cecyte.pdb
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.csproj.AssemblyReference.cache
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.Main.resources
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.Properties.Resources.resources
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.csproj.GenerateResource.cache
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.csproj.CoreCompileInputs.cache
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.exe
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.pdb
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.DetallesEjercicio.resources
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.Menu.resources
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.Prestaciones.resources
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.DetallesPrestaciones.resources
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.DetalleNomina.resources
+C:\Users\moise\Documents\C#\Cecyte\obj\Debug\Cecyte.Nomina.resources
