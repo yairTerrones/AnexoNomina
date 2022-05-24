@@ -34,6 +34,6 @@ namespace Cecyte
         {
             Prestaciones ObjPrestaciones = new Prestaciones();
             ObjPrestaciones.ShowDialog(this);
-        }      
+        }
     }
 }

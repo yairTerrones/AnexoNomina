@@ -37,8 +37,6 @@ namespace Cecyte
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnImportar = new System.Windows.Forms.Button();
             this.GridPuestos = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Borrar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.denominacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +49,8 @@ namespace Cecyte
             this.costoPeriodoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ejercicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.puestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridPuestos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puestosBindingSource)).BeginInit();
@@ -139,22 +139,6 @@ namespace Cecyte
             this.GridPuestos.TabIndex = 6;
             this.GridPuestos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPuestos_CellContentClick);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForLinkValue = true;
-            // 
-            // Borrar
-            // 
-            this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Name = "Borrar";
-            this.Borrar.ReadOnly = true;
-            this.Borrar.Text = "Borrar";
-            this.Borrar.UseColumnTextForLinkValue = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -226,6 +210,22 @@ namespace Cecyte
             this.ejercicioDataGridViewTextBoxColumn.DataPropertyName = "Ejercicio";
             this.ejercicioDataGridViewTextBoxColumn.HeaderText = "Ejercicio";
             this.ejercicioDataGridViewTextBoxColumn.Name = "ejercicioDataGridViewTextBoxColumn";
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForLinkValue = true;
+            // 
+            // Borrar
+            // 
+            this.Borrar.HeaderText = "Borrar";
+            this.Borrar.Name = "Borrar";
+            this.Borrar.ReadOnly = true;
+            this.Borrar.Text = "Borrar";
+            this.Borrar.UseColumnTextForLinkValue = true;
             // 
             // puestosBindingSource
             // 

@@ -30,10 +30,10 @@ namespace Cecyte
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNomina = new System.Windows.Forms.Button();
             this.btnPrestaciones = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnNomina = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,16 @@ namespace Cecyte
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 465);
             this.panel1.TabIndex = 0;
+            // 
+            // btnNomina
+            // 
+            this.btnNomina.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNomina.Location = new System.Drawing.Point(0, 146);
+            this.btnNomina.Name = "btnNomina";
+            this.btnNomina.Size = new System.Drawing.Size(185, 23);
+            this.btnNomina.TabIndex = 4;
+            this.btnNomina.Text = "Nomina";
+            this.btnNomina.UseVisualStyleBackColor = true;
             // 
             // btnPrestaciones
             // 
@@ -79,16 +89,6 @@ namespace Cecyte
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(185, 100);
             this.panel2.TabIndex = 1;
-            // 
-            // btnNomina
-            // 
-            this.btnNomina.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNomina.Location = new System.Drawing.Point(0, 146);
-            this.btnNomina.Name = "btnNomina";
-            this.btnNomina.Size = new System.Drawing.Size(185, 23);
-            this.btnNomina.TabIndex = 4;
-            this.btnNomina.Text = "Nomina";
-            this.btnNomina.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 
