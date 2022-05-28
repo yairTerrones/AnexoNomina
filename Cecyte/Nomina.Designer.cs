@@ -29,23 +29,23 @@ namespace Cecyte
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgNominaExcel = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnImportar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgNominaExcel)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgNominaExcel
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 137);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 301);
-            this.dataGridView1.TabIndex = 0;
+            this.dgNominaExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgNominaExcel.Location = new System.Drawing.Point(12, 137);
+            this.dgNominaExcel.Name = "dgNominaExcel";
+            this.dgNominaExcel.Size = new System.Drawing.Size(776, 301);
+            this.dgNominaExcel.TabIndex = 0;
             // 
             // label1
             // 
@@ -92,30 +92,31 @@ namespace Cecyte
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnImportar
             // 
-            this.button3.Location = new System.Drawing.Point(687, 95);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Importar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnImportar.Location = new System.Drawing.Point(687, 95);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(75, 23);
+            this.btnImportar.TabIndex = 6;
+            this.btnImportar.Text = "Importar";
+            this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgNominaExcel);
             this.Name = "Nomina";
             this.Text = "Nomina";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgNominaExcel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,12 +124,12 @@ namespace Cecyte
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgNominaExcel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnImportar;
     }
 }

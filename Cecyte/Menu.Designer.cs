@@ -59,6 +59,7 @@ namespace Cecyte
             this.btnNomina.TabIndex = 4;
             this.btnNomina.Text = "Nomina";
             this.btnNomina.UseVisualStyleBackColor = true;
+            this.btnNomina.Click += new System.EventHandler(this.btnNomina_Click);
             // 
             // btnPrestaciones
             // 

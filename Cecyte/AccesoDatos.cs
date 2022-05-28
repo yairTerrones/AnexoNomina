@@ -12,7 +12,9 @@ namespace Cecyte
 {
     public class AccesoDatos
     {
-        private SqlConnection conn = new SqlConnection("Password=Sapb1234;Persist Security Info=True;User ID=sa;Initial Catalog=CECYTE;Data Source=DESKTOP-71BHR8U");
+        //private SqlConnection conn = new SqlConnection("Password=Sapb1234;Persist Security Info=True;User ID=sa;Initial Catalog=CECYTE;Data Source=DESKTOP-71BHR8U");
+        //Cadena de Conexion YAIR
+        private SqlConnection conn = new SqlConnection("Data Source=DESKTOP-7Q2OEQG;Initial Catalog=CECYTE;Integrated Security=True;Password=Sapb1234;User ID=sa");
 
         public void InsertContact(Puestos puestos)
         {
@@ -341,7 +343,7 @@ namespace Cecyte
                     });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

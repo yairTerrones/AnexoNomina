@@ -35,5 +35,19 @@ namespace Cecyte
             Prestaciones ObjPrestaciones = new Prestaciones();
             ObjPrestaciones.ShowDialog(this);
         }
+
+        //Metodo para Abrir la ventana de Nomina.
+        private void btnNomina_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Nomina nomina = new Nomina();
+                nomina.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
