@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb; //Para el archivo de excel
+using System.Data.SqlClient;//
+using System.Globalization;
 
 namespace Cecyte
 {
@@ -18,6 +20,11 @@ namespace Cecyte
         OleDbCommand oDBCommand;
         OleDbDataAdapter oDBAdapter;
         DataSet dsDatos;
+
+        SqlCommand sqlcomand;
+        SqlConnection sqlConnection;
+
+
 
         public Nomina()
         {
@@ -45,13 +52,13 @@ namespace Cecyte
         }
 
         //Metodo para importar el archivo de excel
-        public DataView importaArchivoExcel(string unNombreArchivo)
+        public DataView importaArchivoExcel(string unArchivoExcel)
         {
             try
             {
-                if (!string.IsNullOrEmpty(unNombreArchivo))
+                if (!string.IsNullOrEmpty(unArchivoExcel))
                 {
-                    oDBCadConexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES\"", unNombreArchivo);
+                    oDBCadConexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES\"", unArchivoExcel);
                     oDBConnection = new OleDbConnection(oDBCadConexion);
                     oDBConnection.Open();
 
@@ -62,6 +69,9 @@ namespace Cecyte
                     dsDatos = new DataSet();
                     oDBAdapter.Fill(dsDatos);
                     oDBConnection.Close();
+
+
+                    insertaDatagridExcel();
 
                     return dsDatos.Tables[0].DefaultView;
                 }
@@ -78,5 +88,72 @@ namespace Cecyte
             }
         }
 
+        /**
+         * Metodo para insertar los valores del archivo de excel en la base de datos,
+         * obteniendo la informacion del datagridview.
+         * 
+         * Consideraciones para el archivo de EXCEL:
+         * 1.- Eliminar las filas 1, 2, 4 y 5.
+         * 2.- Eliminar las columnas ET, EU, EV Y EW, PERO REVISANOD QUE NO TENGA FORMULAS, SI LAS TIENE,
+         *     dañara los datos de las columnas anteriores.
+        */
+        public void insertaDatagridExcel()
+        {
+            string queryNomina, cadenaNomina;
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-7Q2OEQG;Initial Catalog=CECYTE;Integrated Security=True;Password=Sapb1234;User ID=sa");
+            
+            try
+            {
+                if (dsDatos.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dsDatos.Tables[0].Rows)
+                    {
+                        if (!string.IsNullOrEmpty(dr.ItemArray[0].ToString()) && !string.IsNullOrEmpty(dr.ItemArray[8].ToString()))
+                        {
+                            DateTime fechaFinal = DateTime.ParseExact(dr.ItemArray[8].ToString(), "dd/MMM/yyyy", CultureInfo.CreateSpecificCulture("es-US"));
+
+                            if (fechaFinal != null)//Si se convierte correctamente la fecha
+                            {
+                                //Console.WriteLine(string.Join("--", dr.ItemArray));
+                                //Console.OpenStandardOutput();
+                                
+                                cadenaNomina = "\'" + string.Join("','", dr.ItemArray) + "\'";
+                                cadenaNomina = cadenaNomina.Replace(dr.ItemArray[8].ToString(), fechaFinal.ToString("yyyy-MM-dd"));
+                                //cadenaNomina = cadenaNomina + dateTimeNomina.Value.ToString("yyyy-MM-dd") + comboBoxNomina.SelectedValue.ToString();
+
+                                queryNomina = "INSERT INTO Nomina VALUES (" + cadenaNomina + ")";
+                                sqlcomand = new SqlCommand(queryNomina, sqlConnection);
+                                sqlcomand.CommandType = CommandType.Text;
+
+                                sqlConnection.Open();
+                                sqlcomand.ExecuteNonQuery();
+                            }
+                            else
+                                MessageBox.Show("No se pudo convertir correctamente la fecha");
+                        }
+                    }
+                    sqlConnection.Close();
+                }
+                else
+                    MessageBox.Show("No se ha imprtado ningun archivo de Excel");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al insertar los datos en la base de datos.");
+            }
+        }
+
     }
 }
+
+
+
+
+//En el foreach del metodo insertaDatagridExcel
+//string valor = dr["NombreColumna"].ToString();
+//string valor2 = dr[0].ToString();
+
+//dr.ItemArray.Contains(string.Empty) //Cadena vacia
+
+//date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
