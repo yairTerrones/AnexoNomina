@@ -24,8 +24,6 @@ namespace Cecyte
         SqlCommand sqlcomand;
         SqlConnection sqlConnection;
 
-
-
         public Nomina()
         {
             InitializeComponent();
@@ -51,6 +49,12 @@ namespace Cecyte
             }
         }
 
+        //Metodo para Ingresar los datos a la DB
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.insertaDatagridExcel();
+        }
+
         //Metodo para importar el archivo de excel
         public DataView importaArchivoExcel(string unArchivoExcel)
         {
@@ -69,10 +73,7 @@ namespace Cecyte
                     dsDatos = new DataSet();
                     oDBAdapter.Fill(dsDatos);
                     oDBConnection.Close();
-
-
-                    insertaDatagridExcel();
-
+                    
                     return dsDatos.Tables[0].DefaultView;
                 }
                 else
@@ -106,6 +107,7 @@ namespace Cecyte
             {
                 if (dsDatos.Tables[0].Rows.Count > 0)
                 {
+                    sqlConnection.Open();
                     foreach (DataRow dr in dsDatos.Tables[0].Rows)
                     {
                         if (!string.IsNullOrEmpty(dr.ItemArray[0].ToString()) && !string.IsNullOrEmpty(dr.ItemArray[8].ToString()))
@@ -125,7 +127,6 @@ namespace Cecyte
                                 sqlcomand = new SqlCommand(queryNomina, sqlConnection);
                                 sqlcomand.CommandType = CommandType.Text;
 
-                                sqlConnection.Open();
                                 sqlcomand.ExecuteNonQuery();
                             }
                             else
@@ -133,6 +134,7 @@ namespace Cecyte
                         }
                     }
                     sqlConnection.Close();
+                    MessageBox.Show("Los datos se han importado correctamente");
                 }
                 else
                     MessageBox.Show("No se ha imprtado ningun archivo de Excel");
@@ -144,6 +146,11 @@ namespace Cecyte
             }
         }
 
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            ReporteNomina reporte = new ReporteNomina();
+            reporte.Show();
+        }
     }
 }
 
