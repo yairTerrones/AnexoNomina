@@ -30,6 +30,7 @@ namespace Cecyte
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.btnNomina = new System.Windows.Forms.Button();
             this.btnPrestaciones = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@ namespace Cecyte
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnReportes);
             this.panel1.Controls.Add(this.btnNomina);
             this.panel1.Controls.Add(this.btnPrestaciones);
             this.panel1.Controls.Add(this.button1);
@@ -49,6 +51,17 @@ namespace Cecyte
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 465);
             this.panel1.TabIndex = 0;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.Location = new System.Drawing.Point(0, 169);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(185, 23);
+            this.btnReportes.TabIndex = 5;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnNomina
             // 
@@ -97,8 +110,11 @@ namespace Cecyte
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 465);
             this.Controls.Add(this.panel1);
+            this.IsMdiContainer = true;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -111,5 +127,6 @@ namespace Cecyte
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPrestaciones;
         private System.Windows.Forms.Button btnNomina;
+        private System.Windows.Forms.Button btnReportes;
     }
 }

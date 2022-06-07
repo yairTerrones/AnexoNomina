@@ -49,3 +49,4 @@ D:\Trabajos\REPOSITORIOS\AnexoNomina\Cecyte\bin\Debug\ShockwaveFlashObjects.dll
 D:\Trabajos\REPOSITORIOS\AnexoNomina\Cecyte\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Trabajos\REPOSITORIOS\AnexoNomina\Cecyte\bin\Debug\stdole.dll
 D:\Trabajos\REPOSITORIOS\AnexoNomina\Cecyte\obj\Debug\Cecyte.ReporteNomina.resources
+D:\Trabajos\REPOSITORIOS\AnexoNomina\Cecyte\obj\Debug\Cecyte.Reportes.resources

@@ -42,12 +42,24 @@ namespace Cecyte
             try
             {
                 Nomina nomina = new Nomina();
-                nomina.ShowDialog(this);
+                nomina.MdiParent = this;
+                nomina.Show();
             }
             catch (Exception ex)
             {
 
             }
         }
+
+
+//===================== Crear reportes ==================
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            Reportes reportes = new Reportes();
+            reportes.MdiParent = this;
+            reportes.Show();
+        }
+
     }
 }

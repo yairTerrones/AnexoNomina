@@ -20,13 +20,13 @@ namespace Cecyte
         OleDbCommand oDBCommand;
         OleDbDataAdapter oDBAdapter;
         DataSet dsDatos;
-
         SqlCommand sqlcomand;
         SqlConnection sqlConnection;
 
         public Nomina()
         {
             InitializeComponent();
+            btnAgregar.Enabled = false;
         }
 
         //Metodo para importar el archivo de Excel
@@ -73,7 +73,8 @@ namespace Cecyte
                     dsDatos = new DataSet();
                     oDBAdapter.Fill(dsDatos);
                     oDBConnection.Close();
-                    
+                    btnAgregar.Enabled = true;
+
                     return dsDatos.Tables[0].DefaultView;
                 }
                 else
@@ -102,7 +103,7 @@ namespace Cecyte
         {
             string queryNomina, cadenaNomina;
             sqlConnection = new SqlConnection("Data Source=DESKTOP-7Q2OEQG;Initial Catalog=CECYTE;Integrated Security=True;Password=Sapb1234;User ID=sa");
-            
+
             try
             {
                 if (dsDatos.Tables[0].Rows.Count > 0)
@@ -118,10 +119,10 @@ namespace Cecyte
                             {
                                 //Console.WriteLine(string.Join("--", dr.ItemArray));
                                 //Console.OpenStandardOutput();
-                                
+
                                 cadenaNomina = "\'" + string.Join("','", dr.ItemArray) + "\'";
                                 cadenaNomina = cadenaNomina.Replace(dr.ItemArray[8].ToString(), fechaFinal.ToString("yyyy-MM-dd"));
-                                //cadenaNomina = cadenaNomina + dateTimeNomina.Value.ToString("yyyy-MM-dd") + comboBoxNomina.SelectedValue.ToString();
+                                //cadenaNomina = cadenaNomina + comboBoxNomina.SelectedValue.ToString();
 
                                 queryNomina = "INSERT INTO Nomina VALUES (" + cadenaNomina + ")";
                                 sqlcomand = new SqlCommand(queryNomina, sqlConnection);
@@ -134,15 +135,20 @@ namespace Cecyte
                         }
                     }
                     sqlConnection.Close();
-                    MessageBox.Show("Los datos se han importado correctamente");
+                    MessageBox.Show("Archivo de Excel ingresado correctamente! \n", "Archivo excel",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("No se ha imprtado ningun archivo de Excel");
-                
+                {
+                    MessageBox.Show("No se ha importado ningun archivo de Excel. \n", " Error ",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error al insertar los datos en la base de datos.");
+                MessageBox.Show("Ocurrio un error al insertar los datos en la base de datos. \n" + ex.ToString(), " Error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
