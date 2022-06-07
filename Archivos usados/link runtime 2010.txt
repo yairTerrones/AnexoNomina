@@ -1,1 +1,6 @@
+Runtime acces
 https://www.microsoft.com/en-in/download/details.aspx?id=13255
+
+Microsoft Office Developer Tools Preview 2 for Visual Studio 2015 - Español
+https://www.microsoft.com/es-mx/download/details.aspx?id=51683
+
