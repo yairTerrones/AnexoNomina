@@ -37,6 +37,8 @@ namespace Cecyte
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnImportar = new System.Windows.Forms.Button();
             this.GridPuestos = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.denominacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +51,6 @@ namespace Cecyte
             this.costoPeriodoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ejercicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Borrar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.puestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridPuestos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puestosBindingSource)).BeginInit();
@@ -70,7 +70,7 @@ namespace Cecyte
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(324, 43);
+            this.label2.Location = new System.Drawing.Point(52, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 24);
             this.label2.TabIndex = 1;
@@ -85,6 +85,7 @@ namespace Cecyte
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.Location = new System.Drawing.Point(477, 88);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
@@ -95,6 +96,7 @@ namespace Cecyte
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Location = new System.Drawing.Point(568, 88);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
@@ -105,6 +107,7 @@ namespace Cecyte
             // 
             // btnImportar
             // 
+            this.btnImportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImportar.Location = new System.Drawing.Point(660, 88);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(75, 23);
@@ -115,6 +118,9 @@ namespace Cecyte
             // 
             // GridPuestos
             // 
+            this.GridPuestos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GridPuestos.AutoGenerateColumns = false;
             this.GridPuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -138,6 +144,22 @@ namespace Cecyte
             this.GridPuestos.Size = new System.Drawing.Size(699, 272);
             this.GridPuestos.TabIndex = 6;
             this.GridPuestos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPuestos_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForLinkValue = true;
+            // 
+            // Borrar
+            // 
+            this.Borrar.HeaderText = "Borrar";
+            this.Borrar.Name = "Borrar";
+            this.Borrar.ReadOnly = true;
+            this.Borrar.Text = "Borrar";
+            this.Borrar.UseColumnTextForLinkValue = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -211,22 +233,6 @@ namespace Cecyte
             this.ejercicioDataGridViewTextBoxColumn.HeaderText = "Ejercicio";
             this.ejercicioDataGridViewTextBoxColumn.Name = "ejercicioDataGridViewTextBoxColumn";
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForLinkValue = true;
-            // 
-            // Borrar
-            // 
-            this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Name = "Borrar";
-            this.Borrar.ReadOnly = true;
-            this.Borrar.Text = "Borrar";
-            this.Borrar.UseColumnTextForLinkValue = true;
-            // 
             // puestosBindingSource
             // 
             this.puestosBindingSource.DataSource = typeof(Cecyte.Puestos);
@@ -244,6 +250,7 @@ namespace Cecyte
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anexo";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridPuestos)).EndInit();

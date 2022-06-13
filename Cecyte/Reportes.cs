@@ -44,10 +44,12 @@ namespace Cecyte
                 }
                 else
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     sqlConnection = new SqlConnection("Data Source=DESKTOP-7Q2OEQG;Initial Catalog=CECYTE;Integrated Security=True;Password=Sapb1234;User ID=sa");
                     sqlConnection.Open();
 
-                    sqlComand = new SqlCommand("Select * from  Nomina order by NumEmpleado", sqlConnection);//Agregar en el query el año y la quincena
+                    //sqlComand = new SqlCommand("Select * from  Nomina order by NumEmpleado", sqlConnection);//Agregar en el query el año y la quincena
+                    sqlComand = new SqlCommand("exec [dbo].[CECYTE_Nomina] " + cbAño.SelectedItem.ToString() + "," + cbQuincena.SelectedItem.ToString(), sqlConnection);//Agregar en el query el año y la quincena
                     sqlDataAdapter = new SqlDataAdapter();
                     sqlDataAdapter.SelectCommand = sqlComand;
 
@@ -56,6 +58,7 @@ namespace Cecyte
                     sqlConnection.Close();
 
                     DataDetalles.DataSource = dsDatos.Tables[0].DefaultView;
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch (Exception ex)

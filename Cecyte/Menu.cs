@@ -28,12 +28,16 @@ namespace Cecyte
         private void OpenAnexoDialog()
         {
             Main ObjMain = new Main();
-            ObjMain.ShowDialog(this);
+            ObjMain.MdiParent = this;
+            ObjMain.Show();
+            //ObjMain.ShowDialog(this);
         }
         private void OpenPrestacionesDialog()
         {
             Prestaciones ObjPrestaciones = new Prestaciones();
-            ObjPrestaciones.ShowDialog(this);
+            ObjPrestaciones.MdiParent = this;
+            ObjPrestaciones.Show();
+            //ObjPrestaciones.ShowDialog(this);
         }
 
         //Metodo para Abrir la ventana de Nomina.

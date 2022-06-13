@@ -40,6 +40,9 @@
             // 
             // DataDetalles
             // 
+            this.DataDetalles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DataDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataDetalles.Location = new System.Drawing.Point(0, 87);
             this.DataDetalles.Name = "DataDetalles";
@@ -48,6 +51,7 @@
             // 
             // btnReporte
             // 
+            this.btnReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReporte.Location = new System.Drawing.Point(807, 23);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(90, 46);
@@ -115,6 +119,7 @@
             // 
             // btnConsulta
             // 
+            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsulta.Location = new System.Drawing.Point(700, 23);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(90, 46);
